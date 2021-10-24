@@ -1,4 +1,4 @@
-# My Portfolio Page
+# Password Generator
 
 ## Purpose
 A website which generates a random password with upper and lower case letters, numbers, and symbols.
