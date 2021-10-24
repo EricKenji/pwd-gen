@@ -19,51 +19,48 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 
     var length = prompt("Select a password length from 8 to 128.");
+    if (length < 8 && length > 128) {
+        window.alert("Please enter a value between 8 and 128.")
+    }
 
     var charValues = []
 
     var lower = prompt("Would you like to include lowercase? Type yes or no");
-    switch(lower) {
-        case "yes": charValues.push("lower");
-        break;
-        case "no": ""
-        break;
-        default: window.prompt("Please enter a valid response.");
-        break;
-    }
-    // if (lower == "yes") {
-    //     charValues.push("lower");
-    // } else {
-    //     alert("Please enter a valid response.")
+    if (lower == "yes") {
+        charValues.push("lower");
+    } else if (lower != "no") {
+        window.alert("Please enter a valid response");
+        return generatePassword();
+    } 
 
-    // return generatePassword();
-    // }
 
   var upper = prompt("Would you like to include uppercase? Type yes or no");
     if (upper == "yes") {
         charValues.push("upper");
-    } else {
-        alert("Please enter a valid response.")
-
-    return generatePassword();
-    }
+    } else if (upper != "no") {
+        window.alert("Please enter a valid response");
+        return generatePassword();
+    } 
 
     var numbers = prompt("Would you like to include numbers? Type yes or no");
     if (numbers == "yes") {
         charValues.push("numbers");
-    } else {
-        alert("Please enter a valid response.")
-
-    return generatePassword();
-    }
+    } else if (numbers != "no") {
+        window.alert("Please enter a valid response");
+        return generatePassword();
+    } 
 
     var symbols = prompt("Would you like to include symbols? Type yes or no");
     if (symbols == "yes") {
         charValues.push("symbols");
-    } else {
-        alert("Please enter a valid response.")
+    } else if (symbols != "no") {
+        window.alert("Please enter a valid response");
+        return generatePassword();
+    } 
 
-    return generatePassword();
+    if (charValues.length === 0) {
+        window.alert("Must enter yes to at least one parameter.");
+        return generatePassword();
     }
 
     var characters = ""
