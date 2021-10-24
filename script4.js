@@ -19,41 +19,42 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 
     var length = prompt("Select a password length from 8 to 128.");
-    if (length < 8 && length > 128) {
+    if (length < 8 || length > 128) {
         window.alert("Please enter a value between 8 and 128.")
+        return generatePassword();
     }
 
     var charValues = []
 
     var lower = prompt("Would you like to include lowercase? Type yes or no");
-    if (lower == "yes") {
+    if (lower.toLowerCase() == "yes") {
         charValues.push("lower");
-    } else if (lower != "no") {
+    } else if (lower.toLowerCase != "no") {
         window.alert("Please enter a valid response");
         return generatePassword();
     } 
 
 
-  var upper = prompt("Would you like to include uppercase? Type yes or no");
-    if (upper == "yes") {
+    var upper = prompt("Would you like to include uppercase? Type yes or no");
+    if (upper.toLowerCase() == "yes") {
         charValues.push("upper");
-    } else if (upper != "no") {
+    } else if (upper.toLowerCase != "no") {
         window.alert("Please enter a valid response");
         return generatePassword();
     } 
 
     var numbers = prompt("Would you like to include numbers? Type yes or no");
-    if (numbers == "yes") {
+    if (numbers.toLowerCase() == "yes") {
         charValues.push("numbers");
-    } else if (numbers != "no") {
+    } else if (numbers.toLowerCase != "no") {
         window.alert("Please enter a valid response");
         return generatePassword();
     } 
 
     var symbols = prompt("Would you like to include symbols? Type yes or no");
-    if (symbols == "yes") {
+    if (symbols.toLowerCase() == "yes") {
         charValues.push("symbols");
-    } else if (symbols != "no") {
+    } else if (symbols.toLowerCase != "no") {
         window.alert("Please enter a valid response");
         return generatePassword();
     } 
