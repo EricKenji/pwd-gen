@@ -53,7 +53,17 @@ function generatePassword() {
 }
    
   function genpwd(characterLength, lower, upper, number, symbol) {
-    String.fromCharCode()
+    var charCodes = lowercaseChar
+    if (upper == true) charCodes = charCodes.concat(uppercaseChar)
+    if (number == true) charCodes = charcodes.concat(numberChar)
+    if (symbol == true) charCodes = charCodes.concat(symbolChar)
+    
+    var passwordChar = []
+    for (var i = 0; i < characterLength; i++) {
+        var characterCode = charCodes[Math.floor(Math.random() * characterLength)]
+        passwordChar.push(tring.fromCharCode(chararacterCode))
+    }
+    return passwordChar.join("")
   }
 
   function arrayLowHigh(low, high) {
@@ -63,6 +73,11 @@ function generatePassword() {
     }
     return array
   }
+
+  console.log(uppercaseChar);
+  console.log(lowercaseChar);
+  console.log(numberChar);
+  console.log(symbolChar);
 
 
 
